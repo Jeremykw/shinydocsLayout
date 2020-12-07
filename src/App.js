@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import LayoutDrawer from './components/LayoutDrawer.js';
+import ControlLayout from './components/ControlLayout.js';
 import './App.css';
 
 function App() {
+  const [portrait, setPortrait] = useState(true)
+
+  const divColours = ['red', 'black', 'purple', 'blue', 'yellow', 'green']
+
+  const handleLayoutChange = () => {
+    setPortrait(!portrait)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <ControlLayout handleLayoutChange={handleLayoutChange} />
+    <LayoutDrawer className="layout_drawer" port={portrait} >
+      {divColours.map( (colour) => <div colour={colour}>{colour}</div> )}
+    </LayoutDrawer>
+    </>
   );
 }
 

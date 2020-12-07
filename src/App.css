@@ -13,6 +13,22 @@
   }
 }
 
+.layout_drawer {
+  width: 100vw;
+  height: 90vh;
+  color: white;
+}
+.layout_port {
+  text-align: center;
+}
+.layout_landscape {
+  display: inline-block;
+  text-align: center;
+}
+
+.handle_layout {
+  height: 10vh;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
